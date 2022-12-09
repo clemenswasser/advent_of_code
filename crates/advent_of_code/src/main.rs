@@ -95,6 +95,11 @@ fn main() {
                 println!("The marker for 4 unique characters was detected at {part1}");
                 println!("The marker for 14 unique characters was detected at {part2}");
             }
+            Day::D07 => {
+                let (part1, part2) = advent_of_code_2022::d07::d07(&input);
+                println!("The sum of all directories with a size of at most 100000 is {part1}");
+                println!("The directory to free has a size of {part2}");
+            }
             _ => todo!(),
         },
     }
