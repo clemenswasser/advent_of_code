@@ -1,9 +1,9 @@
 use std::collections::HashSet;
 
 fn item_type_priority(item_type: &char) -> u64 {
-    let item_type_priority = if ('a'..='z').contains(&item_type) {
+    let item_type_priority = if ('a'..='z').contains(item_type) {
         *item_type as u8 - b'a' + 1
-    } else if ('A'..='Z').contains(&item_type) {
+    } else if ('A'..='Z').contains(item_type) {
         *item_type as u8 - b'A' + 27
     } else {
         unreachable!()
@@ -30,7 +30,7 @@ pub fn d03(input: &str) -> (u64, u64) {
         .chunks_exact(3)
         .map(|group| {
             group
-                .into_iter()
+                .iter()
                 .map(|group| group.chars().collect::<HashSet<char>>())
                 .reduce(|a, b| a.intersection(&b).copied().collect())
                 .map(|shared_item_types| {

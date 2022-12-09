@@ -1,2 +1,2 @@
-pub fn d03(input: &str) {
+pub fn d03(_input: &str) {
 }

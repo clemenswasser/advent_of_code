@@ -1,5 +1,5 @@
 pub fn d01(input: &str) -> usize {
-    let measurements: Vec<u64> = input.lines().map(str::parse).flatten().collect();
+    let measurements: Vec<u64> = input.lines().flat_map(str::parse).collect();
     measurements
         .windows(2)
         .filter(|window| window[0] < window[1])

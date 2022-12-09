@@ -9,7 +9,7 @@ pub fn d01(input: &str) -> (u64, u64) {
         })
         .collect();
     elves_calories.select_nth_unstable_by(2, |a, b| b.cmp(a));
-    (elves_calories[0], elves_calories[..3].into_iter().sum())
+    (elves_calories[0], elves_calories[..3].iter().sum())
 }
 
 #[cfg(test)]

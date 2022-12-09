@@ -2,7 +2,7 @@ pub fn d02(input: &str) -> (u64, u64) {
     let part1 = input
         .lines()
         .map(|line| {
-            let (opponent_str, me_str) = line.split_once(" ").unwrap();
+            let (opponent_str, me_str) = line.split_once(' ').unwrap();
             let opponent = opponent_str.chars().next().unwrap();
             let me = me_str.chars().next().unwrap();
             let me_score = match me {
@@ -30,7 +30,7 @@ pub fn d02(input: &str) -> (u64, u64) {
     let part2 = input
         .lines()
         .map(|line| {
-            let (opponent_str, me_str) = line.split_once(" ").unwrap();
+            let (opponent_str, me_str) = line.split_once(' ').unwrap();
             let opponent = opponent_str.chars().next().unwrap();
             let me = me_str.chars().next().unwrap();
             let me_score = match (me, opponent) {

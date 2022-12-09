@@ -17,11 +17,11 @@ fn count_sections_by(sections: &mut Vec<(u64, u64)>, pred: fn((u64, u64), u64) -
 }
 
 fn count_contained_sections(sections: &mut Vec<(u64, u64)>) -> u64 {
-    count_sections_by(sections, |(begin, end), max_end| max_end >= end)
+    count_sections_by(sections, |(_, end), max_end| max_end >= end)
 }
 
 fn count_overlapping_sections(sections: &mut Vec<(u64, u64)>) -> u64 {
-    count_sections_by(sections, |(begin, end), max_end| max_end >= begin)
+    count_sections_by(sections, |(begin, _), max_end| max_end >= begin)
 }
 
 fn parse_and_count_sections_by(input: &str, pred: fn(&mut Vec<(u64, u64)>) -> u64) -> u64 {
@@ -29,9 +29,9 @@ fn parse_and_count_sections_by(input: &str, pred: fn(&mut Vec<(u64, u64)>) -> u6
         .lines()
         .map(|line| {
             let mut sections: Vec<_> = line
-                .split(",")
+                .split(',')
                 .map(|section| {
-                    let (begin, end) = section.split_once("-").unwrap();
+                    let (begin, end) = section.split_once('-').unwrap();
                     (begin.parse::<u64>().unwrap(), end.parse::<u64>().unwrap())
                 })
                 .collect();
