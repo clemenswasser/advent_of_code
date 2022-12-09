@@ -70,6 +70,11 @@ fn main() {
                 println!("The most carried Calories by a single Elf are {part1}");
                 println!("The most carried Calories by a three Elves are {part2}");
             }
+            Day::D02 => {
+                let (part1, part2) = advent_of_code_2022::d02::d02(&input);
+                println!("The encrypted strategy guide score is {part1}");
+                println!("The decrypted strategy guide score is {part2}");
+            }
             _ => todo!(),
         },
     }
