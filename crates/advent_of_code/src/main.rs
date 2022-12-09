@@ -85,6 +85,11 @@ fn main() {
                 println!("The count of contained sections is {part1}");
                 println!("The count of overlapping sections is {part2}");
             }
+            Day::D05 => {
+                let (part1, part2) = advent_of_code_2022::d05::d05(&input);
+                println!("The resulting crate positions are {part1}");
+                println!("The resulting ordered crate positions are {part2}");
+            }
             _ => todo!(),
         },
     }
