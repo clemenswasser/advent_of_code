@@ -90,6 +90,11 @@ fn main() {
                 println!("The resulting crate positions are {part1}");
                 println!("The resulting ordered crate positions are {part2}");
             }
+            Day::D06 => {
+                let (part1, part2) = advent_of_code_2022::d06::d06(&input);
+                println!("The marker for 4 unique characters was detected at {part1}");
+                println!("The marker for 14 unique characters was detected at {part2}");
+            }
             _ => todo!(),
         },
     }
