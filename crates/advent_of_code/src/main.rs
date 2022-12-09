@@ -75,6 +75,11 @@ fn main() {
                 println!("The encrypted strategy guide score is {part1}");
                 println!("The decrypted strategy guide score is {part2}");
             }
+            Day::D03 => {
+                let (part1, part2) = advent_of_code_2022::d03::d03(&input);
+                println!("The item priority sum is {part1}");
+                println!("The item priority sum for groups of 3 is {part2}");
+            }
             _ => todo!(),
         },
     }
