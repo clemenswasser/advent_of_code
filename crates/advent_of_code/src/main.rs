@@ -80,6 +80,11 @@ fn main() {
                 println!("The item priority sum is {part1}");
                 println!("The item priority sum for groups of 3 is {part2}");
             }
+            Day::D04 => {
+                let (part1, part2) = advent_of_code_2022::d04::d04(&input);
+                println!("The count of contained sections is {part1}");
+                println!("The count of overlapping sections is {part2}");
+            }
             _ => todo!(),
         },
     }

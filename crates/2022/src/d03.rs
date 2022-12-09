@@ -1,4 +1,4 @@
-use std::{collections::HashSet, hash::Hash};
+use std::collections::HashSet;
 
 fn item_type_priority(item_type: &char) -> u64 {
     let item_type_priority = if ('a'..='z').contains(&item_type) {
