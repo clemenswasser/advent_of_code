@@ -16,9 +16,9 @@ fn parse_crates(crates: &[&str]) -> Vec<Vec<char>> {
 }
 
 fn simulate_crane(
-    stacks: &mut Vec<Vec<char>>,
+    stacks: &mut [Vec<char>],
     moves: &[&str],
-    transfer: fn(stacks: &mut Vec<Vec<char>>, from: usize, to: usize, count: usize),
+    transfer: fn(stacks: &mut [Vec<char>], from: usize, to: usize, count: usize),
 ) {
     for line in moves {
         let instrs: Vec<_> = line.split_ascii_whitespace().collect();
@@ -29,14 +29,14 @@ fn simulate_crane(
     }
 }
 
-fn transfer_crates(stacks: &mut Vec<Vec<char>>, from: usize, to: usize, count: usize) {
+fn transfer_crates(stacks: &mut [Vec<char>], from: usize, to: usize, count: usize) {
     for _ in 0..count {
         let val = stacks[from].pop().unwrap();
         stacks[to].push(val);
     }
 }
 
-fn transfer_crates_ordered(stacks: &mut Vec<Vec<char>>, from: usize, to: usize, count: usize) {
+fn transfer_crates_ordered(stacks: &mut [Vec<char>], from: usize, to: usize, count: usize) {
     let count_idx = stacks[from].len() - count;
     let (_, crates) = stacks[from].split_at(count_idx);
     let crates = crates.to_owned();
